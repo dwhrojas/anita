@@ -1,43 +1,4 @@
-<?php
-	require_once('recaptchalib.php');
-	$nombre = '';
-	$email = '';
-	$asunto = '';
-	$mensaje = '';
-	if ($_POST['nombre']) {
-		$nombre = (string) $_POST['nombre'];
-	}
-	if ($_POST['email']) {
-		$email = (string) $_POST['email'];
-	}
-	if ($_POST['asunto']) {
-		$asunto = (string) $_POST['asunto'];
-	}
-	if ($_POST['mensaje']) {
-		$mensaje = (string) $_POST['mensaje'];
-	}
-	$publickey = "6Ld98-kSAAAAANr2sSVHTbLXfdYw11qhDw4tD7qr";
-	$privatekey = "6Ld98-kSAAAAAL79XNi3c7sr19JFgpcHVqxyBsT0";
-	# the response from reCAPTCHA
-	$resp = null;
-	# the error code from reCAPTCHA, if any
 
-	# was there a reCAPTCHA response?
-	if (!empty($_POST)) {
-			$resp = recaptcha_check_answer ($privatekey,
-											$_SERVER["REMOTE_ADDR"],
-											$_POST["recaptcha_challenge_field"],
-											$_POST["recaptcha_response_field"]);
-
-			if ($resp->is_valid) {
-					include "consulte/process.php";
-					die();
-			} else {
-					# set the error code so that we can display it
-					$error = "Error en Capcha";
-			}
-	}
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head> 
@@ -174,8 +135,8 @@ _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
 	
 	<footer>
 		 ALQUILER DE CABAÑAS - CAMPING CON PLAYA PRIVADA -  Disfrute sus vacaciones este es su lugar. <br>
-		 Tel: (02942) 496158 Cel.:(02942)15666290 - ruta 23 acceso arroyo maipen    
-		<h1>Junto al rio Alumine</h1>  
+		 
+		<h1>Junto al rio </h1>  
 	</footer>	
 </body>
 </html>
