@@ -1,0 +1,489 @@
+/*
+lo primero es un receteo universal de las etiquetas que vamos a ocupar
+*/
+
+*{
+	border: 0;/* modelo de caja a cero */
+	margin: 0;
+	padding: 0;  /* relleno */
+}
+
+/* todas las estructuras que trabajamos en caja su naturaleza es en bloke */
+article, figcaption, figure, footer, header, hgroup, nav, section {
+	display: block;
+}
+
+@font-face {
+    font-family: 'open_sansitalic';
+    src: url('../font/OpenSans-Italic-webfont.eot');
+    src: url('../font/OpenSans-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/OpenSans-Italic-webfont.woff') format('woff'),
+         url('../font/OpenSans-Italic-webfont.ttf') format('truetype'),
+         url('../font/OpenSans-Italic-webfont.svg#open_sansitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/*   la minima medida en web es
+16px = 12pt(como en word) = 100% = 1em 
+el (em) es el ancho de la letra mayuscula M porque es al letra mas ancha
+ */
+body {
+	background: #212121 url("../img/fondo.jpg");
+	color: #fff; 
+	font-family: "open_sansitalic",Helvetica,Verdana;
+	font-size: 12px;
+}
+a {
+	color: #57ABB8;
+	font-weight: bold;
+	text-decoration: none;
+}
+a:hover {
+	color: #F60;
+}
+audio, iframe, img, video {
+	max-width: 100%;
+}
+
+fieldset {
+	border: .1em solid #F60;
+	border-radius: .5em;
+	padding: 1em;
+}
+
+figcaption {
+	font-size: 0.85em;
+	padding: 0.25em;
+	text-align: center;
+}
+
+form {
+	width:100%;
+}
+
+form div {
+	margin: .5em;
+}
+h1
+{
+	color: #1E6381;
+	text-align: center;
+	text-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+	
+}
+
+h2, h3{
+	color: #F90;
+	font-family: Helvetica,Verdana;
+}
+
+
+h3{
+	background: #E2E7F1;
+	border-radius: 1em;
+	box-shadow: .25em .25em .25em rgba(255,153,0,.5);
+	margin-bottom: .5em;
+	padding-left: 0.5em;
+}
+
+hr {
+	border: 1px dashed #FFF;
+	margin: 1em 0;
+}
+
+iframe {
+	border-radius: .5em;
+
+}
+
+input[type="email"], input[type="text"], textarea {
+	background: #EEE;
+	border-radius: 0.25em;
+	color: #F60;
+	font-size: 1em;
+	padding: .25em;
+	width: 95%;
+}
+
+input[type="email"]:focus, input[type="text"]:focus, textarea:focus {
+	background: #C6ECF9;
+}
+
+input[type="submit"] {
+	background: #F90;
+	border-radius: 0 .25em;
+	color: #500;
+	font-family: "Verdana";
+	font-size: 1.25em;
+	padding: .25em;	
+}
+
+input[type="submit"]:hover {
+	background: #7BBFD5;
+	border-radius: .25em 0;
+	color: #000;
+	cursor: pointer;
+}
+input[type="reset"] {
+	background: #F90;
+	border-radius: 0 .25em;
+	color: #500;
+	font-family: "Verdana";
+	font-size: 1.25em;
+	padding: .25em;	
+}
+
+input[type="reset"]:hover {
+	background: #7BBFD5;
+	border-radius: .25em 0;
+	color: #000;
+	cursor: pointer;
+}
+
+label {
+	cursor: pointer;
+	/* supuestamente al pasar por arriba del nombre de la etiqueta debe aprarecer uan manito
+	 */
+}
+
+legend {
+	color: #F90;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+
+
+ol {
+	padding: 0 2em;
+}
+ol li{
+	padding: 1em 0;
+}
+
+textarea{
+	resize: none;
+}
+header, section#contenido, footer{
+	background: #FFF url("../img/fondo-interno.jpg");
+	margin: 0 auto;
+	max-width: 90%;
+	text-align: center;
+}
+header h1, nav {
+	display:inline-block;
+	max-width: 100%;
+	vertical-align: middle;
+}
+nav ul {
+	list-style: none;
+}
+nav li {
+	display:inline-block;
+	padding: 0.1em;
+	vertical-align: top;
+}
+nav a {
+	background: #FFF;
+	border: 0.1em solid #57ABB8;
+	border-radius: 0.25em;
+	color: #f60;
+	display: block;
+	font-family: "Pecita", Helvetica, Verdana;
+	font-size: 1.0em;
+	padding: 0.2em;
+	-ms-transition: all 0.5s ease-in;
+	-moz-transition: all 0.5s ease-in;
+	-o-transition: all 0.5s ease-in;
+	-webkit-transition: all 0.5s ease-in;
+	transition: all 0.5s ease-in;
+}
+nav a:hover {
+	background: #212121;
+	border: 0.1em dashed #f60;
+	border-radius: 0 0.5em 0 0.5em;
+	color: #FFF;
+	-ms-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+section#principal, aside {
+	background: #1E6381;
+	border-radius: 0.5em;
+	display: inline-block;
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 0.25em;
+	vertical-align: top;
+	width: 65%;
+}
+article#galeria-inicio {
+	border-radius: 0.5em;
+	margin: 0.5em;
+	padding: 0.5em;
+	text-align: left;
+	width: 95%;
+}
+aside {
+	font-size: 12px;
+	width: 30%;
+}
+ 
+aside img, #img-acerca img, #video-acerca, #img-servicios {
+	border-radius: 0.5em;
+}
+/*  
+estilos para descripcion acerca
+dentro del seccion contenido
+*/
+article#descripcion-acerca, article#multimedia-acerca {
+	background: #1E6301;
+	border-radius: .5em;
+	display: inline-block;
+	margin: 0 auto;
+	max-width: 100%;
+	min-height:543px ;
+	padding: .5em;
+	text-align: justify;
+	vertical-align: top;
+	width: 55%;
+}
+article#multimedia-acerca {
+	text-align: center;
+	width: 40%;
+}
+section#servicios-principal, section#servicios-tipos  {
+	margin: 0 auto;
+	max-width: 95%;
+}
+#img-servicios, article#nuestros-servicios {
+	display: inline-block;
+	margin: 1em 0;
+	vertical-align: top;
+	width: 40%;
+}
+article#nuestros-servicios, article#servicio1, article#servicio2, article#servicio3  {
+	background: #1E6301;
+	border-radius: .5em;
+	max-width: 100%;
+	min-height: 300px ;
+	padding: .5em;
+	text-align: justify;
+	width: 55%;
+}
+article#servicio1, article#servicio2, article#servicio3  {
+	background: #011E30;
+	display: inline-block;
+	width: 31%;
+	vertical-align: top;
+}
+
+article#servicio1 div, article#servicio2 {
+	text-align: center;
+}
+
+section#trabajos {
+	background:  #011f30;
+	border-radius: .5em;
+	margin: 0 auto;
+	max-width: 80%;
+	padding: .5em;
+	text-align: center;
+}
+
+div.portafolio {
+	margin: 2em auto;
+}
+
+div.portafolio article{
+	display: inline;
+	padding: 1em;
+}
+
+
+
+article#info-contacto, article#contactanos {
+	border: .1em solid #1E6381;
+	border-radius: .5em;
+	margin: .5em;
+	min-height: 144px;
+	padding: .5em;
+}
+
+span.datos-contacto {
+	color: #F90;
+	margin-left: 1em;
+	}
+
+section#mapa {
+	text-align: center;
+}
+
+footer {
+	color: #1E6381; /*#fff;*/
+	font-size: 0.85em;
+	padding: 0.75em 0;
+	font-family: Helvetica,Verdana;
+}
+
+section#contacto, section#mapa {
+	background: #011E30;
+	border-radius:  0.5em;
+	display: inline-block;
+	margin: 0 auto;
+	min-height: 350px;
+	padding: .5em;
+	text-align: justify;
+	vertical-align: top;
+	width: 45%;
+
+}
+
+/* agregado min-width*/
+section#contacto {
+	min-width: 430px;
+}
+
+.fade{
+    opacity: 1;
+	filter: alpha(opacity=10);
+	-ms-transition: all 0.5s ease-in;
+	-moz-transition: all 0.5s ease-in;
+	-o-transition: all 0.5s ease-in;
+	-webkit-transition: all 0.5s ease-in;
+	transition: all 0.5s ease-in;
+}
+.fade:hover{
+	opacity: 0.7;
+	filter: alpha(opacity=7);
+	-ms-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+
+.redonda{
+	border-radius: 3.125em;
+	box-shadow: 5px 5px 10px rgba(255,255,255,.5);
+	/* si yo divido 50px pixeles entre 16 px que es lo que vale 1em
+	da un total de 3.125em xq debo tarbajar en em no mas en px
+	para redondear la imagen a la mitad si las imagenes tienen 100x100px 
+	los borden deben ir al 50% es decir a la mitad 50px */
+}
+
+
+/* screen and se los saque a los @media*/
+@media  (min-width:1081px){
+	header h1{
+		text-align: left;
+		width: 35%;
+	}
+	nav {
+		text-align: rigth;
+		width: 60%;
+	}
+}
+@media  (max-width:1080px){
+	nav li {
+		font-size: 1.3em;
+	}
+
+	article#galeria-inicio {
+		width: 90%;
+	}
+	aside {
+		width: 20%;
+	}
+	 article#descripcion-acerca, article#multimedia-acerca, #img-servicios, article#nuestros-servicios {
+		width: 45%;
+	} 
+	article#servicio1, article#servicio2, article#servicio3  {
+	 	width: 30%;
+	 }
+	section#trabajos{
+		max-width: 90%;
+	} 
+	div.portafolio article {
+		padding:.5em;
+	}
+	form {
+		width: 95%;
+	}
+}
+@media  (max-width:800px){
+	nav li {
+		font-size: 0.95em;
+	}
+	article#galeria-inicio {
+		width: 88%;
+	}
+	#img-servicios, article#nuestros-servicios, article#servicio1 {
+	display: block;
+	margin: 0 0 .25em 0;
+	width: 95%;
+	}
+	#img-servicios{
+	width: 98%;
+	}
+	article#servicio2, article#servicio3  {
+	 	width: 45%;
+	 }
+	section#trabajos{
+		max-width: 95%;
+	}
+	div.portafolio article {
+		padding: 2em;
+	}
+
+	section#contacto, section#mapa {
+		display: block;
+		width: 95%;
+	}
+
+	section#contacto {
+		margin-bottom: 2em;
+	}
+
+	form {
+		width: 100%;
+	}
+
+}
+
+@media  (max-width:600px){
+	nav li {
+		display: inline-block;
+		margin: 0px;
+		width: 98%;
+	}
+	 
+	section#principal, article#descripcion-acerca, article#servicio2 {
+		margin-bottom: 0.2em;
+	}
+
+	aside {
+		width: 95%;
+	}
+	
+	section#principal, aside, article#descripcion-acerca, article#multimedia-acerca, article#servicio2, article#servicio3  {
+		display: block;
+		width: 95%;
+		}
+
+	img#img-servicios {
+		display: none;
+		} 
+
+	div.portafolio article {
+		display: block;
+		margin: .5em auto;
+		padding: 0;
+	}	
+	
+}

@@ -1,0 +1,13 @@
+/* Pagina web de responsiv design */
+
+/* TEAM */
+	Creator: Herrera Walter
+	Contact: walter.nexsur[at]gmail.com
+/* IN MEMORIAL */
+	Cesar
+/* THANKS */
+   Desarrolloweb.com
+/* SITIO */
+	Herramientas web
+	JQUERY
+
