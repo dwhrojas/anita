@@ -6,6 +6,11 @@
 		-->
 	<title> Secci&oacute;n Servicios de Cabañas La anita, en  </title>
 	
+	<!-- nuevo agegado calendar-->
+	<link href='fullcalendar-1.6.1/fullcalendar/fullcalendar.css' rel='stylesheet' />
+       <link href='fullcalendar-1.6.1/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+         <!-- nuevo agegado calendar-->
+	
 	<meta name="description" content="En esta secci&oacute;n encontrar&aacute;s los servicios que ofrecemos en nuestras confortables Cabañas junto al rio, con playa privada y camping propio," />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<link rel="shortcout icon" type="image/x-icon" href="favicon.ico"/>
@@ -25,7 +30,88 @@
   ga('send', 'pageview');
 
 </script>
+	<!-- nuevo agegado calendar-->
+	<script src='fullcalendar-1.6.1/jquery/jquery-1.9.1.min.js'></script>
+	<script src='fullcalendar-1.6.1/jquery/jquery-ui-1.10.2.custom.min.js'></script>
+	<script src='fullcalendar-1.6.1/fullcalendar/fullcalendar.min.js'></script>
+	<script>
 
+	$(document).ready(function() {
+	
+		var date = new Date();
+		var d = date.getDate();
+		var m = date.getMonth();
+		var y = date.getFullYear();
+		
+		var calendar = $('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month' // esto agrega agenda semanal, agenda dia 'month,agendaWeek,agendaDay' 
+			},
+			selectable: true,
+			selectHelper: true,
+			select: function(start, end, allDay) {
+				var title = prompt('Nombre del Cliente:');
+				if (title) {
+					calendar.fullCalendar('renderEvent',
+						{
+							title: title,							 
+							start: start,
+							end: end,
+							allDay: allDay
+						},
+						true // make the event "stick"
+					);
+				}
+				calendar.fullCalendar('unselect');
+			},
+			editable: true,
+			events: [
+				
+				{
+					title: 'Flia Pascal',
+					start: new Date(y, m, 5),
+					end: new Date(y, m, 12)
+				},
+				{
+					id: 999,
+					title: 'papa francisco',
+					start: new Date(y, m, 3, 16, 0),
+					allDay: false
+				},
+				
+				{
+					title: 'Satanas',
+					start: new Date(y, m, 28, 10, 30),
+					end: new Date(y, m, 30, 22, 30),
+					allDay: false
+				},
+				{
+					title: 'Harry potter',
+					start: new Date(y, m, 19, 12, 0),
+					end: new Date(y, m, 22, 14, 0),
+					allDay: false
+				},
+				{
+					title: 'Homero Simpson',
+					start: new Date(y, m, 25, 19, 0),
+					end: new Date(y, m, 26, 22, 30),
+					allDay: false
+				},
+				{
+					title: 'Asesor de Google',
+					start: new Date(y, m, 13),
+					end: new Date(y, m, 16),
+					url: 'http://google.com/'
+				}
+			]
+		});
+		
+	});
+
+</script>
+<!-- nuevo agegado calendar-->
 </head>
 
 <body>
@@ -61,6 +147,12 @@
 					 
 				</p>
 			</article>
+<!-- nuevo agegado calendar-->
+			 <div class="col-1">	
+					 <div id='calendar'></div> 
+                        </div> 
+<!-- nuevo agegado calendar-->
+			
 		</section> 	 
 		<section id="servicios-tipos">
 		 	<article id="servicio1">
